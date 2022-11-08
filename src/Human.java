@@ -1,32 +1,44 @@
 public class Human {
     public String name;
-    int yearOfBirth;
-    String town;
+    public String getTown;
+    public int getYearOfBirth;
+    private int yearOfBirth;
+    private String town;
+    public String job;
 
-    String job;
-
-
-
-    public String toString() {
-        return "Привет! Меня зовут" + name + "Я из города " + town + " Я родился в " + yearOfBirth + " году. Будем знакомы!";
-    }
-
-
-    void getYearOfBirth() {
+        public void setYearOfBirth(int yearOfBirth) {
         this.yearOfBirth = yearOfBirth;
     }
 
-    void getName() {
-        this.name = name;
-    }
-
-    void getTown() {
+    public void setTown(String town) {
         this.town = town;
     }
+    public int getYearOfBirth() {
+        this.yearOfBirth = yearOfBirth;
 
-    void getJob() {
-        this.job = job;
+        if (yearOfBirth <= 0) {
+            this.yearOfBirth = 0;
+        } else {
+            this.yearOfBirth = yearOfBirth
+            ;
+        }
+        return yearOfBirth;
+    }
+    public String getTown() {
+        if (town == null || town.isEmpty()) {
+            this.town = "Информация не указана";
+        } else {
+            this.town = town;
+
+        }
+
+        return town;
+    }
+            public String toString() {
+            return  "Привет! Меня зовут " + name +
+                    " Я из города " + getTown() +
+                    "  Я родился в " + getYearOfBirth() +
+                    "  Я работаю на должности" + job + " году. Будем знакомы!";
     }
 }
-
 
