@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
 public class Main {
     public static void main(String[] args) {
         //Задача 1
@@ -7,6 +11,7 @@ public class Main {
         macsim.getTown = "Минск";
         macsim.getYearOfBirth = 35;
         macsim.job = "бренд-менеджером";
+
         Human anna = new Human();
         anna.name = "Аня";
         anna.getTown = "Москва";
@@ -36,24 +41,28 @@ public class Main {
         rose.getCountry = " Голландии";
         rose.getCost = 35.59;
         rose.setLifeSpan(3);
+        rose.quantity = 2;
 
         Flower chrysanthemum = new Flower();
         chrysanthemum.name = " Хризантема";
         chrysanthemum.getCountry = " ";
         chrysanthemum.getCost = 15;
         chrysanthemum.setLifeSpan(5);
+        chrysanthemum.quantity = 3;
 
         Flower pion = new Flower();
         pion.name = " Пион";
         pion.getCountry = " Англии ";
         pion.getCost = 69.9;
         pion.setLifeSpan(1);
+        pion.quantity = 4;
 
         Flower gypsophila = new Flower();
         gypsophila.name = " Гипсофила";
         gypsophila.getCountry = " Турция ";
         gypsophila.getCost = 19.5;
         gypsophila.setLifeSpan(10);
+        gypsophila.quantity = 4;
 
 
         System.out.println("Привет! Меня зовут " + macsim.name + "  Я из города " + macsim.getTown + "  Я родился в " + (curenYar - macsim.getYearOfBirth) + " году. Будем знакомы! ");
@@ -81,24 +90,14 @@ public class Main {
 
         System.out.println("==============================================================================================================================");
 
-        Flower Rose = rose;
-        Flower Pion = pion;
-        Flower Chrysanthemum = chrysanthemum;
-        Flower Gypsophila = gypsophila;
 
-        public void testBuket() {
+        int lifeSpan[] = new int[]{3, 5, 1, 10 };
 
-            Flower.FlowerPack pack = new Flower.FlowerPack();
-            pack.add(new Rose());
-            pack.add(new Pion());
-            pack.add(new Chrysanthemum());
-            pack.add(new Gypsophila());
-
-
-            System.out.println(pack.getPackPrice());
+        int min = Flower.getMin(lifeSpan);
+        System.out.println("простоит "+ min + " суток");
 
     }
-}}
+}
 
 
 

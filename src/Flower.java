@@ -1,5 +1,7 @@
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Flower {
     public String getCountry;
@@ -8,8 +10,44 @@ public class Flower {
     private String country;
     private double cost;
     public int lifeSpan;
+
+
     public String name;
 
+    public int quantity;
+
+
+    public void setFlowerColor(String flowerColor) {
+        this.flowerColor = flowerColor;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
+
+    public void setLifeSpan(int lifeSpan) {
+        this.lifeSpan = lifeSpan;
+    }
+
+    public int getQuantity() {
+
+        if (quantity < 0) {
+            this.quantity = quantity;
+
+        } else {
+            this.quantity = 0;
+        }
+        return quantity;
+    }
+
+    public int setQuantity(int quantity) {
+        this.quantity = quantity;
+        return quantity;
+    }
 
     public String getFlowerColor() {
 
@@ -56,31 +94,30 @@ public class Flower {
         return lifeSpan;
     }
 
-    public void setFlowerColor(String flowerColor) {
-        this.flowerColor = flowerColor;
+    public static double theCostOfTheBouquet(Flower rose, int quantity1, Flower chrysanthemum, int quantity2, Flower pion, int quantity3,
+                                             Flower gypsophila, int quantity4) {
+        gypsophila.quantity = quantity4;
+        pion.quantity = quantity3;
+        chrysanthemum.quantity = quantity2;
+        rose.quantity = quantity1;
+        double summ = ((rose.getCost * quantity1) + (chrysanthemum.getCost * quantity2) + (pion.getCost * quantity3) + (gypsophila.getCost * quantity4));
+        summ += summ * 0.1;
+        return summ;
+
     }
+    public static int getMin(int[] lifeSpanl) {
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public void setCost(int cost) {
-        this.cost = cost;
-    }
-
-    public void setLifeSpan(int lifeSpan) {
-        this.lifeSpan = lifeSpan;
-    }
-
-
-    public static class FlowerPack extends ArrayList<Flower> {
-        public BigDecimal getPackPrice() {
-            BigDecimal summ = BigDecimal.ZERO;
-            for (Flower f : this) {
-                summ = summ.add(f.getCost());
+        int minValue = lifeSpanl[0];
+        for (int i = 1; i < lifeSpanl.length; i++) {
+            if (lifeSpanl[i] < minValue) {
+                minValue = lifeSpanl[i];
             }
-            return summ;
         }
+        return minValue;
+
     }
+
 
 }
+
+

@@ -27,6 +27,7 @@ public class Human {
         return yearOfBirth;
     }
 
+
     public String getTown() {
         if (town == null || town.isEmpty()) {
             this.town = "Информация не указана";
