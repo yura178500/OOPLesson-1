@@ -1,3 +1,6 @@
+import java.math.BigDecimal;
+import java.util.ArrayList;
+
 public class Flower {
     public String getCountry;
     public double getCost;
@@ -31,7 +34,7 @@ public class Flower {
         return country;
     }
 
-    public double getCost() {
+    public BigDecimal getCost() {
 
         if (cost <= 0) {
             this.cost = 1;
@@ -39,7 +42,7 @@ public class Flower {
         } else {
             this.cost = cost;
         }
-        return cost;
+        return BigDecimal.valueOf(cost);
     }
 
     public int getLifeSpan() {
@@ -69,5 +72,15 @@ public class Flower {
         this.lifeSpan = lifeSpan;
     }
 
+
+    public static class FlowerPack extends ArrayList<Flower> {
+        public BigDecimal getPackPrice() {
+            BigDecimal summ = BigDecimal.ZERO;
+            for (Flower f : this) {
+                summ = summ.add(f.getCost());
+            }
+            return summ;
+        }
+    }
 
 }

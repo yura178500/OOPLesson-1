@@ -6,6 +6,7 @@ public class Human {
     private String town;
     public String job;
 
+
     public void setYearOfBirth(int yearOfBirth) {
         this.yearOfBirth = yearOfBirth;
     }

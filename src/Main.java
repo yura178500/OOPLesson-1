@@ -81,8 +81,24 @@ public class Main {
 
         System.out.println("==============================================================================================================================");
 
+        Flower Rose = rose;
+        Flower Pion = pion;
+        Flower Chrysanthemum = chrysanthemum;
+        Flower Gypsophila = gypsophila;
+
+        public void testBuket() {
+
+            Flower.FlowerPack pack = new Flower.FlowerPack();
+            pack.add(new Rose());
+            pack.add(new Pion());
+            pack.add(new Chrysanthemum());
+            pack.add(new Gypsophila());
+
+
+            System.out.println(pack.getPackPrice());
+
     }
-}
+}}
 
 
 
