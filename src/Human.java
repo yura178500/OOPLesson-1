@@ -6,13 +6,14 @@ public class Human {
     private String town;
     public String job;
 
-        public void setYearOfBirth(int yearOfBirth) {
+    public void setYearOfBirth(int yearOfBirth) {
         this.yearOfBirth = yearOfBirth;
     }
 
     public void setTown(String town) {
         this.town = town;
     }
+
     public int getYearOfBirth() {
         this.yearOfBirth = yearOfBirth;
 
@@ -24,6 +25,7 @@ public class Human {
         }
         return yearOfBirth;
     }
+
     public String getTown() {
         if (town == null || town.isEmpty()) {
             this.town = "Информация не указана";
@@ -34,11 +36,12 @@ public class Human {
 
         return town;
     }
-            public String toString() {
-            return  "Привет! Меня зовут " + name +
-                    " Я из города " + getTown() +
-                    "  Я родился в " + getYearOfBirth() +
-                    "  Я работаю на должности" + job + " году. Будем знакомы!";
+
+    public String toString() {
+        return "Привет! Меня зовут " + name +
+                " Я из города " + getTown() +
+                "  Я родился в " + getYearOfBirth() +
+                "  Я работаю на должности" + job + " году. Будем знакомы!";
     }
 }
 
