@@ -93,7 +93,6 @@ public class Flower {
         }
         return lifeSpan;
     }
-
     public static double theCostOfTheBouquet(Flower rose, int quantity1, Flower chrysanthemum, int quantity2, Flower pion, int quantity3,
                                              Flower gypsophila, int quantity4) {
         gypsophila.quantity = quantity4;

@@ -91,10 +91,13 @@ public class Main {
         System.out.println("==============================================================================================================================");
 
 
-        int lifeSpan[] = new int[]{3, 5, 1, 10 };
+        int lifeSpan[] = new int[]{3, 5, 1, 10};
 
         int min = Flower.getMin(lifeSpan);
-        System.out.println("простоит "+ min + " суток");
+        System.out.println("Букет :" + rose.name + " штуки " + rose.quantity + chrysanthemum.name + " штуки " + chrysanthemum.quantity + pion.name + " штуки " + pion.quantity + gypsophila.name + " штуки " + gypsophila.quantity);
+        System.out.println(" Стоимость " + ((rose.getCost * rose.quantity) + (chrysanthemum.getCost * chrysanthemum.quantity) + (pion.getCost * pion.quantity) + (gypsophila.getCost * gypsophila.quantity) * 0.1) + "рублей");
+        System.out.println(" Простоит " + min + " суток");
+
 
     }
 }
